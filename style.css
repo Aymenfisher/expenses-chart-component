@@ -85,7 +85,7 @@ main{
 }
 
 .stats-container .charts-container{
-    height: 200px;
+    height: 250px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -93,6 +93,7 @@ main{
 }
 
 .charts-container .day{
+    position: relative;
     height: 100%;
     display: flex;
     flex: 1 1 0;
@@ -108,9 +109,9 @@ main{
 }
 
 .value-bar{
-    width: 100%;
-    position: relative;
-    bottom: 2%;
+    width: calc(100% + 5px);
+    position: absolute;
+    z-index: 1;;
     text-align: center;
     background-color: var(--dark-brown);
     color: var(--white);
@@ -120,7 +121,7 @@ main{
     letter-spacing: 1px;
     display: none;  /* will be showed on hover */
 }
-.value-bar span{
+.value-bar .day-amount{
     color: var(--white);
     font-size: 1rem;
     font-weight: 600;
@@ -188,7 +189,7 @@ footer{
 }
 
 
-@media screen and (max-width: 520px),(max-height: 660px) {
+@media screen and (max-width: 520px) {
 
     html{
         font-size: 14px;
@@ -197,6 +198,12 @@ footer{
         max-width: 500px !important;
         width: 90%;
         gap: 10px;
+    }
+    .balance-container,.stats-container{
+        padding: 20px;
+    }
+    .value-bar .day-amount{
+        font-size: 80%;
     }
     
 }
@@ -216,5 +223,15 @@ footer{
         width: 90%;
         height: 450px;
         gap: 10px;
+    }
+}
+
+@media screen and (max-height: 680px) {
+    .balance-container{
+        height: 20px;
+    }
+
+    .stats-container{
+        height: 300px;
     }
 }

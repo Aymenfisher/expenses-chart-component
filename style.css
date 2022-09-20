@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+:root{
+    --font-dm-sans : 'Dm Sans', sans-serif;
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --white: hsl(33, 100%, 98%);
+    --very-pale-orange: #ff9b87;
+
+}
+
+
+html{
+    font-size: 18px;
+    width: 100vw;
+    height: 100vh;
+    font-family: var(--font-dm-sans);
+}
+
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--cream);
+    display: grid;
+    grid-template: 95% 5% / 100%;
+}
+
+main{
+    width: 500px;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.balance-container{
+    height: 40px;
+    background-color: var(--soft-red);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.balance-container *{
+    margin: 0;
+}
+.balance-container .my-balance{
+    color:var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.my-balance span{
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+/* bottom side */
+
+.stats-container{
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stats-container *{
+    margin: 0;
+}
+
+.stats-container h2{
+    color: var(--dark-brown);
+    text-align: left;
+}
+
+.stats-container .charts-container{
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.charts-container .day{
+    height: 100%;
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.day span{ 
+    color: var(--medium-brown);
+    font-size: .8rem;
+    text-transform: capitalize;
+}
+
+.value-bar{
+    width: 100%;
+    position: relative;
+    bottom: 2%;
+    text-align: center;
+    background-color: var(--dark-brown);
+    color: var(--white);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: none;  /* will be showed on hover */
+}
+.value-bar span{
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.bar:hover{
+    cursor: pointer;
+    opacity: .8;
+}
+
+.bar{
+    color: rgba(0, 0, 0, 0);
+    align-self: stretch;
+    background-color: var(--soft-red);
+    border-radius: 5px;
+    text-align: center;
+}
+
+hr{
+    border: 1px solid var(--cream);
+}
+
+.stats-container .month-stats{
+    display: flex;
+    justify-content: space-between;
+}
+
+.month-stats .month-balance{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.month-balance span{
+    color: var(--dark-brown);
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.month-balance p{
+    color: var(--medium-brown);
+}
+
+.month-stats .month-percentage{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.month-percentage span{
+    color: var(--dark-brown);
+    font-weight: 700;
+    align-self: flex-end;
+}
+
+.month-percentage p{
+    color: var(--medium-brown);
+}
+
+footer{
+    font-size: clamp(10px,3vw,18px);
+    align-self: end;
+}
+
+
+@media screen and (max-width: 520px),(max-height: 660px) {
+
+    html{
+        font-size: 14px;
+    }
+    main{
+        max-width: 500px !important;
+        width: 90%;
+        gap: 10px;
+    }
+    
+}
+
+@media screen and (max-width: 370px) {
+
+    html{
+        font-size: 12px;
+    }
+
+    .balance-container,.stats-container{
+        padding: 20px;
+    }
+
+    main{
+        max-width: 500px !important;
+        width: 90%;
+        height: 450px;
+        gap: 10px;
+    }
+}
